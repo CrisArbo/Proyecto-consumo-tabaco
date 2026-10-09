@@ -1,0 +1,121 @@
+// use prisma-8
+
+model Household {
+  id      Int      @id @default(autoincrement())
+  persons Person[]
+}
+
+model Person {
+  id             Int         @id @default(autoincrement())
+  householdId    Int
+  personOrder    SmallInt
+  surveySequence SmallInt
+  pSequence      SmallInt
+  genderId       Int
+  age            SmallInt
+
+  household      Household   @relation(fields: [householdId], references: [id])
+  gender         CatGender   @relation(fields: [genderId], references: [id])
+  respondent     Respondent?
+
+  @@unique([householdId, personOrder])
+}
+
+model Respondent {
+  id               Int               @id @default(autoincrement())
+  personId         Int               @unique
+  mainActivityId   Int
+  healthStatusId   Int
+  smokingRiskId    Int
+  educationLevelId Int
+
+  person           Person            @relation(fields: [personId], references: [id], onDelete: Cascade)
+  mainActivity     CatActivity       @relation(fields: [mainActivityId], references: [id])
+  healthStatus     CatHealthStatus   @relation(fields: [healthStatusId], references: [id])
+  smokingRisk      CatRisk           @relation(fields: [smokingRiskId], references: [id])
+  educationLevel   CatEducationLevel @relation(fields: [educationLevelId], references: [id])
+  tobaccoUse       TobaccoUse?
+  vapeUse          VapeUse?
+}
+
+model TobaccoUse {
+  id               Int                @id @default(autoincrement())
+  respondentId     Int                @unique
+  everSmokedId     Int
+  ageFirstUse      SmallInt?
+  firstUseTimingId Int?
+  smokedLast12mId  Int?
+  smokedLast30dId  Int?
+
+  respondent       Respondent         @relation(fields: [respondentId], references: [id], onDelete: Cascade)
+  everSmoked       CatAnswer          @relation("TobaccoEverSmoked", fields: [everSmokedId], references: [id])
+  firstUseTiming   CatFirstUseTiming? @relation(fields: [firstUseTimingId], references: [id])
+  smokedLast12m    CatAnswer?         @relation("TobaccoSmokedLast12m", fields: [smokedLast12mId], references: [id])
+  smokedLast30d    CatAnswer?         @relation("TobaccoSmokedLast30d", fields: [smokedLast30dId], references: [id])
+}
+
+model VapeUse {
+  id             Int        @id @default(autoincrement())
+  respondentId   Int        @unique
+  everVapedId    Int
+  ageFirstUse    SmallInt?
+  vapedLast30dId Int?
+
+  respondent     Respondent @relation(fields: [respondentId], references: [id], onDelete: Cascade)
+  everVaped      CatAnswer  @relation("VapeEverVaped", fields: [everVapedId], references: [id])
+  vapedLast30d   CatAnswer? @relation("VapeVapedLast30d", fields: [vapedLast30dId], references: [id])
+}
+
+model CatGender {
+  id      Int      @id @default(autoincrement())
+  code    SmallInt @unique
+  label   String   @unique
+  persons Person[]
+}
+
+model CatAnswer {
+  id                   Int          @id @default(autoincrement())
+  code                 SmallInt     @unique
+  label                String       @unique
+
+  tobaccoEverSmoked    TobaccoUse[] @relation("TobaccoEverSmoked")
+  tobaccoSmokedLast12m TobaccoUse[] @relation("TobaccoSmokedLast12m")
+  tobaccoSmokedLast30d TobaccoUse[] @relation("TobaccoSmokedLast30d")
+  vapeEverVaped        VapeUse[]    @relation("VapeEverVaped")
+  vapeVapedLast30d     VapeUse[]    @relation("VapeVapedLast30d")
+}
+
+model CatActivity {
+  id          Int          @id @default(autoincrement())
+  code        SmallInt     @unique
+  label       String       @unique
+  respondents Respondent[]
+}
+
+model CatHealthStatus {
+  id          Int          @id @default(autoincrement())
+  code        SmallInt     @unique
+  label       String       @unique
+  respondents Respondent[]
+}
+
+model CatRisk {
+  id          Int          @id @default(autoincrement())
+  code        SmallInt     @unique
+  label       String       @unique
+  respondents Respondent[]
+}
+
+model CatEducationLevel {
+  id          Int          @id @default(autoincrement())
+  code        SmallInt     @unique
+  label       String       @unique
+  respondents Respondent[]
+}
+
+model CatFirstUseTiming {
+  id         Int          @id @default(autoincrement())
+  code       SmallInt     @unique
+  label      String       @unique
+  tobaccoUse TobaccoUse[]
+}

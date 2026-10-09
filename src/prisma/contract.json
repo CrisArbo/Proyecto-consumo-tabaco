@@ -1,0 +1,2120 @@
+{
+  "schemaVersion": "1",
+  "targetFamily": "sql",
+  "target": "postgres",
+  "profileHash": "3916f444a8a17ad749191acf9e08dad97d1a327b88c2f1d45d12f240296aa8b2",
+  "roots": {
+    "CatActivity": {
+      "model": "CatActivity",
+      "namespace": "public"
+    },
+    "CatAnswer": {
+      "model": "CatAnswer",
+      "namespace": "public"
+    },
+    "CatEducationLevel": {
+      "model": "CatEducationLevel",
+      "namespace": "public"
+    },
+    "CatFirstUseTiming": {
+      "model": "CatFirstUseTiming",
+      "namespace": "public"
+    },
+    "CatGender": {
+      "model": "CatGender",
+      "namespace": "public"
+    },
+    "CatHealthStatus": {
+      "model": "CatHealthStatus",
+      "namespace": "public"
+    },
+    "CatRisk": {
+      "model": "CatRisk",
+      "namespace": "public"
+    },
+    "Household": {
+      "model": "Household",
+      "namespace": "public"
+    },
+    "Person": {
+      "model": "Person",
+      "namespace": "public"
+    },
+    "Respondent": {
+      "model": "Respondent",
+      "namespace": "public"
+    },
+    "TobaccoUse": {
+      "model": "TobaccoUse",
+      "namespace": "public"
+    },
+    "VapeUse": {
+      "model": "VapeUse",
+      "namespace": "public"
+    }
+  },
+  "domain": {
+    "namespaces": {
+      "public": {
+        "models": {
+          "CatActivity": {
+            "fields": {
+              "code": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int2@1",
+                  "kind": "scalar"
+                }
+              },
+              "id": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "label": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/text@1",
+                  "kind": "scalar"
+                }
+              }
+            },
+            "relations": {
+              "respondents": {
+                "cardinality": "1:N",
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "mainActivityId"
+                  ]
+                },
+                "to": {
+                  "model": "Respondent",
+                  "namespace": "public"
+                }
+              }
+            },
+            "storage": {
+              "fields": {
+                "code": {
+                  "column": "code"
+                },
+                "id": {
+                  "column": "id"
+                },
+                "label": {
+                  "column": "label"
+                }
+              },
+              "namespaceId": "public",
+              "table": "CatActivity"
+            }
+          },
+          "CatAnswer": {
+            "fields": {
+              "code": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int2@1",
+                  "kind": "scalar"
+                }
+              },
+              "id": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "label": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/text@1",
+                  "kind": "scalar"
+                }
+              }
+            },
+            "relations": {
+              "tobaccoEverSmoked": {
+                "cardinality": "1:N",
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "everSmokedId"
+                  ]
+                },
+                "to": {
+                  "model": "TobaccoUse",
+                  "namespace": "public"
+                }
+              },
+              "tobaccoSmokedLast12m": {
+                "cardinality": "1:N",
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "smokedLast12mId"
+                  ]
+                },
+                "to": {
+                  "model": "TobaccoUse",
+                  "namespace": "public"
+                }
+              },
+              "tobaccoSmokedLast30d": {
+                "cardinality": "1:N",
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "smokedLast30dId"
+                  ]
+                },
+                "to": {
+                  "model": "TobaccoUse",
+                  "namespace": "public"
+                }
+              },
+              "vapeEverVaped": {
+                "cardinality": "1:N",
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "everVapedId"
+                  ]
+                },
+                "to": {
+                  "model": "VapeUse",
+                  "namespace": "public"
+                }
+              },
+              "vapeVapedLast30d": {
+                "cardinality": "1:N",
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "vapedLast30dId"
+                  ]
+                },
+                "to": {
+                  "model": "VapeUse",
+                  "namespace": "public"
+                }
+              }
+            },
+            "storage": {
+              "fields": {
+                "code": {
+                  "column": "code"
+                },
+                "id": {
+                  "column": "id"
+                },
+                "label": {
+                  "column": "label"
+                }
+              },
+              "namespaceId": "public",
+              "table": "CatAnswer"
+            }
+          },
+          "CatEducationLevel": {
+            "fields": {
+              "code": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int2@1",
+                  "kind": "scalar"
+                }
+              },
+              "id": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "label": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/text@1",
+                  "kind": "scalar"
+                }
+              }
+            },
+            "relations": {
+              "respondents": {
+                "cardinality": "1:N",
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "educationLevelId"
+                  ]
+                },
+                "to": {
+                  "model": "Respondent",
+                  "namespace": "public"
+                }
+              }
+            },
+            "storage": {
+              "fields": {
+                "code": {
+                  "column": "code"
+                },
+                "id": {
+                  "column": "id"
+                },
+                "label": {
+                  "column": "label"
+                }
+              },
+              "namespaceId": "public",
+              "table": "CatEducationLevel"
+            }
+          },
+          "CatFirstUseTiming": {
+            "fields": {
+              "code": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int2@1",
+                  "kind": "scalar"
+                }
+              },
+              "id": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "label": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/text@1",
+                  "kind": "scalar"
+                }
+              }
+            },
+            "relations": {
+              "tobaccoUse": {
+                "cardinality": "1:N",
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "firstUseTimingId"
+                  ]
+                },
+                "to": {
+                  "model": "TobaccoUse",
+                  "namespace": "public"
+                }
+              }
+            },
+            "storage": {
+              "fields": {
+                "code": {
+                  "column": "code"
+                },
+                "id": {
+                  "column": "id"
+                },
+                "label": {
+                  "column": "label"
+                }
+              },
+              "namespaceId": "public",
+              "table": "CatFirstUseTiming"
+            }
+          },
+          "CatGender": {
+            "fields": {
+              "code": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int2@1",
+                  "kind": "scalar"
+                }
+              },
+              "id": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "label": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/text@1",
+                  "kind": "scalar"
+                }
+              }
+            },
+            "relations": {
+              "persons": {
+                "cardinality": "1:N",
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "genderId"
+                  ]
+                },
+                "to": {
+                  "model": "Person",
+                  "namespace": "public"
+                }
+              }
+            },
+            "storage": {
+              "fields": {
+                "code": {
+                  "column": "code"
+                },
+                "id": {
+                  "column": "id"
+                },
+                "label": {
+                  "column": "label"
+                }
+              },
+              "namespaceId": "public",
+              "table": "CatGender"
+            }
+          },
+          "CatHealthStatus": {
+            "fields": {
+              "code": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int2@1",
+                  "kind": "scalar"
+                }
+              },
+              "id": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "label": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/text@1",
+                  "kind": "scalar"
+                }
+              }
+            },
+            "relations": {
+              "respondents": {
+                "cardinality": "1:N",
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "healthStatusId"
+                  ]
+                },
+                "to": {
+                  "model": "Respondent",
+                  "namespace": "public"
+                }
+              }
+            },
+            "storage": {
+              "fields": {
+                "code": {
+                  "column": "code"
+                },
+                "id": {
+                  "column": "id"
+                },
+                "label": {
+                  "column": "label"
+                }
+              },
+              "namespaceId": "public",
+              "table": "CatHealthStatus"
+            }
+          },
+          "CatRisk": {
+            "fields": {
+              "code": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int2@1",
+                  "kind": "scalar"
+                }
+              },
+              "id": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "label": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/text@1",
+                  "kind": "scalar"
+                }
+              }
+            },
+            "relations": {
+              "respondents": {
+                "cardinality": "1:N",
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "smokingRiskId"
+                  ]
+                },
+                "to": {
+                  "model": "Respondent",
+                  "namespace": "public"
+                }
+              }
+            },
+            "storage": {
+              "fields": {
+                "code": {
+                  "column": "code"
+                },
+                "id": {
+                  "column": "id"
+                },
+                "label": {
+                  "column": "label"
+                }
+              },
+              "namespaceId": "public",
+              "table": "CatRisk"
+            }
+          },
+          "Household": {
+            "fields": {
+              "id": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              }
+            },
+            "relations": {
+              "persons": {
+                "cardinality": "1:N",
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "householdId"
+                  ]
+                },
+                "to": {
+                  "model": "Person",
+                  "namespace": "public"
+                }
+              }
+            },
+            "storage": {
+              "fields": {
+                "id": {
+                  "column": "id"
+                }
+              },
+              "namespaceId": "public",
+              "table": "Household"
+            }
+          },
+          "Person": {
+            "fields": {
+              "age": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int2@1",
+                  "kind": "scalar"
+                }
+              },
+              "genderId": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "householdId": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "id": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "pSequence": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int2@1",
+                  "kind": "scalar"
+                }
+              },
+              "personOrder": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int2@1",
+                  "kind": "scalar"
+                }
+              },
+              "surveySequence": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int2@1",
+                  "kind": "scalar"
+                }
+              }
+            },
+            "relations": {
+              "gender": {
+                "cardinality": "N:1",
+                "nullable": false,
+                "on": {
+                  "localFields": [
+                    "genderId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "CatGender",
+                  "namespace": "public"
+                }
+              },
+              "household": {
+                "cardinality": "N:1",
+                "nullable": false,
+                "on": {
+                  "localFields": [
+                    "householdId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "Household",
+                  "namespace": "public"
+                }
+              },
+              "respondent": {
+                "cardinality": "1:1",
+                "nullable": true,
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "personId"
+                  ]
+                },
+                "to": {
+                  "model": "Respondent",
+                  "namespace": "public"
+                }
+              }
+            },
+            "storage": {
+              "fields": {
+                "age": {
+                  "column": "age"
+                },
+                "genderId": {
+                  "column": "genderId"
+                },
+                "householdId": {
+                  "column": "householdId"
+                },
+                "id": {
+                  "column": "id"
+                },
+                "pSequence": {
+                  "column": "pSequence"
+                },
+                "personOrder": {
+                  "column": "personOrder"
+                },
+                "surveySequence": {
+                  "column": "surveySequence"
+                }
+              },
+              "namespaceId": "public",
+              "table": "Person"
+            }
+          },
+          "Respondent": {
+            "fields": {
+              "educationLevelId": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "healthStatusId": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "id": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "mainActivityId": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "personId": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "smokingRiskId": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              }
+            },
+            "relations": {
+              "educationLevel": {
+                "cardinality": "N:1",
+                "nullable": false,
+                "on": {
+                  "localFields": [
+                    "educationLevelId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "CatEducationLevel",
+                  "namespace": "public"
+                }
+              },
+              "healthStatus": {
+                "cardinality": "N:1",
+                "nullable": false,
+                "on": {
+                  "localFields": [
+                    "healthStatusId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "CatHealthStatus",
+                  "namespace": "public"
+                }
+              },
+              "mainActivity": {
+                "cardinality": "N:1",
+                "nullable": false,
+                "on": {
+                  "localFields": [
+                    "mainActivityId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "CatActivity",
+                  "namespace": "public"
+                }
+              },
+              "person": {
+                "cardinality": "N:1",
+                "nullable": false,
+                "on": {
+                  "localFields": [
+                    "personId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "Person",
+                  "namespace": "public"
+                }
+              },
+              "smokingRisk": {
+                "cardinality": "N:1",
+                "nullable": false,
+                "on": {
+                  "localFields": [
+                    "smokingRiskId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "CatRisk",
+                  "namespace": "public"
+                }
+              },
+              "tobaccoUse": {
+                "cardinality": "1:1",
+                "nullable": true,
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "respondentId"
+                  ]
+                },
+                "to": {
+                  "model": "TobaccoUse",
+                  "namespace": "public"
+                }
+              },
+              "vapeUse": {
+                "cardinality": "1:1",
+                "nullable": true,
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "respondentId"
+                  ]
+                },
+                "to": {
+                  "model": "VapeUse",
+                  "namespace": "public"
+                }
+              }
+            },
+            "storage": {
+              "fields": {
+                "educationLevelId": {
+                  "column": "educationLevelId"
+                },
+                "healthStatusId": {
+                  "column": "healthStatusId"
+                },
+                "id": {
+                  "column": "id"
+                },
+                "mainActivityId": {
+                  "column": "mainActivityId"
+                },
+                "personId": {
+                  "column": "personId"
+                },
+                "smokingRiskId": {
+                  "column": "smokingRiskId"
+                }
+              },
+              "namespaceId": "public",
+              "table": "Respondent"
+            }
+          },
+          "TobaccoUse": {
+            "fields": {
+              "ageFirstUse": {
+                "nullable": true,
+                "type": {
+                  "codecId": "pg/int2@1",
+                  "kind": "scalar"
+                }
+              },
+              "everSmokedId": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "firstUseTimingId": {
+                "nullable": true,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "id": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "respondentId": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "smokedLast12mId": {
+                "nullable": true,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "smokedLast30dId": {
+                "nullable": true,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              }
+            },
+            "relations": {
+              "everSmoked": {
+                "cardinality": "N:1",
+                "nullable": false,
+                "on": {
+                  "localFields": [
+                    "everSmokedId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "CatAnswer",
+                  "namespace": "public"
+                }
+              },
+              "firstUseTiming": {
+                "cardinality": "N:1",
+                "nullable": true,
+                "on": {
+                  "localFields": [
+                    "firstUseTimingId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "CatFirstUseTiming",
+                  "namespace": "public"
+                }
+              },
+              "respondent": {
+                "cardinality": "N:1",
+                "nullable": false,
+                "on": {
+                  "localFields": [
+                    "respondentId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "Respondent",
+                  "namespace": "public"
+                }
+              },
+              "smokedLast12m": {
+                "cardinality": "N:1",
+                "nullable": true,
+                "on": {
+                  "localFields": [
+                    "smokedLast12mId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "CatAnswer",
+                  "namespace": "public"
+                }
+              },
+              "smokedLast30d": {
+                "cardinality": "N:1",
+                "nullable": true,
+                "on": {
+                  "localFields": [
+                    "smokedLast30dId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "CatAnswer",
+                  "namespace": "public"
+                }
+              }
+            },
+            "storage": {
+              "fields": {
+                "ageFirstUse": {
+                  "column": "ageFirstUse"
+                },
+                "everSmokedId": {
+                  "column": "everSmokedId"
+                },
+                "firstUseTimingId": {
+                  "column": "firstUseTimingId"
+                },
+                "id": {
+                  "column": "id"
+                },
+                "respondentId": {
+                  "column": "respondentId"
+                },
+                "smokedLast12mId": {
+                  "column": "smokedLast12mId"
+                },
+                "smokedLast30dId": {
+                  "column": "smokedLast30dId"
+                }
+              },
+              "namespaceId": "public",
+              "table": "TobaccoUse"
+            }
+          },
+          "VapeUse": {
+            "fields": {
+              "ageFirstUse": {
+                "nullable": true,
+                "type": {
+                  "codecId": "pg/int2@1",
+                  "kind": "scalar"
+                }
+              },
+              "everVapedId": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "id": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "respondentId": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "vapedLast30dId": {
+                "nullable": true,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              }
+            },
+            "relations": {
+              "everVaped": {
+                "cardinality": "N:1",
+                "nullable": false,
+                "on": {
+                  "localFields": [
+                    "everVapedId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "CatAnswer",
+                  "namespace": "public"
+                }
+              },
+              "respondent": {
+                "cardinality": "N:1",
+                "nullable": false,
+                "on": {
+                  "localFields": [
+                    "respondentId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "Respondent",
+                  "namespace": "public"
+                }
+              },
+              "vapedLast30d": {
+                "cardinality": "N:1",
+                "nullable": true,
+                "on": {
+                  "localFields": [
+                    "vapedLast30dId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "CatAnswer",
+                  "namespace": "public"
+                }
+              }
+            },
+            "storage": {
+              "fields": {
+                "ageFirstUse": {
+                  "column": "ageFirstUse"
+                },
+                "everVapedId": {
+                  "column": "everVapedId"
+                },
+                "id": {
+                  "column": "id"
+                },
+                "respondentId": {
+                  "column": "respondentId"
+                },
+                "vapedLast30dId": {
+                  "column": "vapedLast30dId"
+                }
+              },
+              "namespaceId": "public",
+              "table": "VapeUse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "storage": {
+    "namespaces": {
+      "public": {
+        "entries": {
+          "table": {
+            "CatActivity": {
+              "columns": {
+                "code": {
+                  "codecId": "pg/int2@1",
+                  "dataType": "pg/int2",
+                  "nullable": false
+                },
+                "id": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "default": {
+                    "expression": "autoincrement()",
+                    "kind": "function"
+                  },
+                  "nullable": false
+                },
+                "label": {
+                  "codecId": "pg/text@1",
+                  "dataType": "pg/text",
+                  "nullable": false
+                }
+              },
+              "foreignKeys": [],
+              "indexes": [],
+              "primaryKey": {
+                "columns": [
+                  "id"
+                ]
+              },
+              "uniques": [
+                {
+                  "columns": [
+                    "code"
+                  ]
+                },
+                {
+                  "columns": [
+                    "label"
+                  ]
+                }
+              ]
+            },
+            "CatAnswer": {
+              "columns": {
+                "code": {
+                  "codecId": "pg/int2@1",
+                  "dataType": "pg/int2",
+                  "nullable": false
+                },
+                "id": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "default": {
+                    "expression": "autoincrement()",
+                    "kind": "function"
+                  },
+                  "nullable": false
+                },
+                "label": {
+                  "codecId": "pg/text@1",
+                  "dataType": "pg/text",
+                  "nullable": false
+                }
+              },
+              "foreignKeys": [],
+              "indexes": [],
+              "primaryKey": {
+                "columns": [
+                  "id"
+                ]
+              },
+              "uniques": [
+                {
+                  "columns": [
+                    "code"
+                  ]
+                },
+                {
+                  "columns": [
+                    "label"
+                  ]
+                }
+              ]
+            },
+            "CatEducationLevel": {
+              "columns": {
+                "code": {
+                  "codecId": "pg/int2@1",
+                  "dataType": "pg/int2",
+                  "nullable": false
+                },
+                "id": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "default": {
+                    "expression": "autoincrement()",
+                    "kind": "function"
+                  },
+                  "nullable": false
+                },
+                "label": {
+                  "codecId": "pg/text@1",
+                  "dataType": "pg/text",
+                  "nullable": false
+                }
+              },
+              "foreignKeys": [],
+              "indexes": [],
+              "primaryKey": {
+                "columns": [
+                  "id"
+                ]
+              },
+              "uniques": [
+                {
+                  "columns": [
+                    "code"
+                  ]
+                },
+                {
+                  "columns": [
+                    "label"
+                  ]
+                }
+              ]
+            },
+            "CatFirstUseTiming": {
+              "columns": {
+                "code": {
+                  "codecId": "pg/int2@1",
+                  "dataType": "pg/int2",
+                  "nullable": false
+                },
+                "id": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "default": {
+                    "expression": "autoincrement()",
+                    "kind": "function"
+                  },
+                  "nullable": false
+                },
+                "label": {
+                  "codecId": "pg/text@1",
+                  "dataType": "pg/text",
+                  "nullable": false
+                }
+              },
+              "foreignKeys": [],
+              "indexes": [],
+              "primaryKey": {
+                "columns": [
+                  "id"
+                ]
+              },
+              "uniques": [
+                {
+                  "columns": [
+                    "code"
+                  ]
+                },
+                {
+                  "columns": [
+                    "label"
+                  ]
+                }
+              ]
+            },
+            "CatGender": {
+              "columns": {
+                "code": {
+                  "codecId": "pg/int2@1",
+                  "dataType": "pg/int2",
+                  "nullable": false
+                },
+                "id": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "default": {
+                    "expression": "autoincrement()",
+                    "kind": "function"
+                  },
+                  "nullable": false
+                },
+                "label": {
+                  "codecId": "pg/text@1",
+                  "dataType": "pg/text",
+                  "nullable": false
+                }
+              },
+              "foreignKeys": [],
+              "indexes": [],
+              "primaryKey": {
+                "columns": [
+                  "id"
+                ]
+              },
+              "uniques": [
+                {
+                  "columns": [
+                    "code"
+                  ]
+                },
+                {
+                  "columns": [
+                    "label"
+                  ]
+                }
+              ]
+            },
+            "CatHealthStatus": {
+              "columns": {
+                "code": {
+                  "codecId": "pg/int2@1",
+                  "dataType": "pg/int2",
+                  "nullable": false
+                },
+                "id": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "default": {
+                    "expression": "autoincrement()",
+                    "kind": "function"
+                  },
+                  "nullable": false
+                },
+                "label": {
+                  "codecId": "pg/text@1",
+                  "dataType": "pg/text",
+                  "nullable": false
+                }
+              },
+              "foreignKeys": [],
+              "indexes": [],
+              "primaryKey": {
+                "columns": [
+                  "id"
+                ]
+              },
+              "uniques": [
+                {
+                  "columns": [
+                    "code"
+                  ]
+                },
+                {
+                  "columns": [
+                    "label"
+                  ]
+                }
+              ]
+            },
+            "CatRisk": {
+              "columns": {
+                "code": {
+                  "codecId": "pg/int2@1",
+                  "dataType": "pg/int2",
+                  "nullable": false
+                },
+                "id": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "default": {
+                    "expression": "autoincrement()",
+                    "kind": "function"
+                  },
+                  "nullable": false
+                },
+                "label": {
+                  "codecId": "pg/text@1",
+                  "dataType": "pg/text",
+                  "nullable": false
+                }
+              },
+              "foreignKeys": [],
+              "indexes": [],
+              "primaryKey": {
+                "columns": [
+                  "id"
+                ]
+              },
+              "uniques": [
+                {
+                  "columns": [
+                    "code"
+                  ]
+                },
+                {
+                  "columns": [
+                    "label"
+                  ]
+                }
+              ]
+            },
+            "Household": {
+              "columns": {
+                "id": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "default": {
+                    "expression": "autoincrement()",
+                    "kind": "function"
+                  },
+                  "nullable": false
+                }
+              },
+              "foreignKeys": [],
+              "indexes": [],
+              "primaryKey": {
+                "columns": [
+                  "id"
+                ]
+              },
+              "uniques": []
+            },
+            "Person": {
+              "columns": {
+                "age": {
+                  "codecId": "pg/int2@1",
+                  "dataType": "pg/int2",
+                  "nullable": false
+                },
+                "genderId": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "nullable": false
+                },
+                "householdId": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "nullable": false
+                },
+                "id": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "default": {
+                    "expression": "autoincrement()",
+                    "kind": "function"
+                  },
+                  "nullable": false
+                },
+                "pSequence": {
+                  "codecId": "pg/int2@1",
+                  "dataType": "pg/int2",
+                  "nullable": false
+                },
+                "personOrder": {
+                  "codecId": "pg/int2@1",
+                  "dataType": "pg/int2",
+                  "nullable": false
+                },
+                "surveySequence": {
+                  "codecId": "pg/int2@1",
+                  "dataType": "pg/int2",
+                  "nullable": false
+                }
+              },
+              "foreignKeys": [
+                {
+                  "index": {
+                    "name": "Person_householdId_idx_fb33d798"
+                  },
+                  "source": {
+                    "columns": [
+                      "householdId"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "Person"
+                  },
+                  "target": {
+                    "columns": [
+                      "id"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "Household"
+                  }
+                },
+                {
+                  "index": {
+                    "name": "Person_genderId_idx_f5331e2a"
+                  },
+                  "source": {
+                    "columns": [
+                      "genderId"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "Person"
+                  },
+                  "target": {
+                    "columns": [
+                      "id"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "CatGender"
+                  }
+                }
+              ],
+              "indexes": [
+                {
+                  "columns": [
+                    "genderId"
+                  ],
+                  "name": "Person_genderId_idx_f5331e2a",
+                  "prefix": "Person_genderId_idx",
+                  "unique": false
+                },
+                {
+                  "columns": [
+                    "householdId"
+                  ],
+                  "name": "Person_householdId_idx_fb33d798",
+                  "prefix": "Person_householdId_idx",
+                  "unique": false
+                }
+              ],
+              "primaryKey": {
+                "columns": [
+                  "id"
+                ]
+              },
+              "uniques": [
+                {
+                  "columns": [
+                    "householdId",
+                    "personOrder"
+                  ]
+                }
+              ]
+            },
+            "Respondent": {
+              "columns": {
+                "educationLevelId": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "nullable": false
+                },
+                "healthStatusId": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "nullable": false
+                },
+                "id": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "default": {
+                    "expression": "autoincrement()",
+                    "kind": "function"
+                  },
+                  "nullable": false
+                },
+                "mainActivityId": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "nullable": false
+                },
+                "personId": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "nullable": false
+                },
+                "smokingRiskId": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "nullable": false
+                }
+              },
+              "foreignKeys": [
+                {
+                  "index": {
+                    "unique": [
+                      "personId"
+                    ]
+                  },
+                  "onDelete": "cascade",
+                  "source": {
+                    "columns": [
+                      "personId"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "Respondent"
+                  },
+                  "target": {
+                    "columns": [
+                      "id"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "Person"
+                  }
+                },
+                {
+                  "index": {
+                    "name": "Respondent_mainActivityId_idx_3c038aef"
+                  },
+                  "source": {
+                    "columns": [
+                      "mainActivityId"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "Respondent"
+                  },
+                  "target": {
+                    "columns": [
+                      "id"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "CatActivity"
+                  }
+                },
+                {
+                  "index": {
+                    "name": "Respondent_healthStatusId_idx_e5cadaeb"
+                  },
+                  "source": {
+                    "columns": [
+                      "healthStatusId"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "Respondent"
+                  },
+                  "target": {
+                    "columns": [
+                      "id"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "CatHealthStatus"
+                  }
+                },
+                {
+                  "index": {
+                    "name": "Respondent_smokingRiskId_idx_01287455"
+                  },
+                  "source": {
+                    "columns": [
+                      "smokingRiskId"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "Respondent"
+                  },
+                  "target": {
+                    "columns": [
+                      "id"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "CatRisk"
+                  }
+                },
+                {
+                  "index": {
+                    "name": "Respondent_educationLevelId_idx_c4962183"
+                  },
+                  "source": {
+                    "columns": [
+                      "educationLevelId"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "Respondent"
+                  },
+                  "target": {
+                    "columns": [
+                      "id"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "CatEducationLevel"
+                  }
+                }
+              ],
+              "indexes": [
+                {
+                  "columns": [
+                    "educationLevelId"
+                  ],
+                  "name": "Respondent_educationLevelId_idx_c4962183",
+                  "prefix": "Respondent_educationLevelId_idx",
+                  "unique": false
+                },
+                {
+                  "columns": [
+                    "healthStatusId"
+                  ],
+                  "name": "Respondent_healthStatusId_idx_e5cadaeb",
+                  "prefix": "Respondent_healthStatusId_idx",
+                  "unique": false
+                },
+                {
+                  "columns": [
+                    "mainActivityId"
+                  ],
+                  "name": "Respondent_mainActivityId_idx_3c038aef",
+                  "prefix": "Respondent_mainActivityId_idx",
+                  "unique": false
+                },
+                {
+                  "columns": [
+                    "smokingRiskId"
+                  ],
+                  "name": "Respondent_smokingRiskId_idx_01287455",
+                  "prefix": "Respondent_smokingRiskId_idx",
+                  "unique": false
+                }
+              ],
+              "primaryKey": {
+                "columns": [
+                  "id"
+                ]
+              },
+              "uniques": [
+                {
+                  "columns": [
+                    "personId"
+                  ]
+                }
+              ]
+            },
+            "TobaccoUse": {
+              "columns": {
+                "ageFirstUse": {
+                  "codecId": "pg/int2@1",
+                  "dataType": "pg/int2",
+                  "nullable": true
+                },
+                "everSmokedId": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "nullable": false
+                },
+                "firstUseTimingId": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "nullable": true
+                },
+                "id": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "default": {
+                    "expression": "autoincrement()",
+                    "kind": "function"
+                  },
+                  "nullable": false
+                },
+                "respondentId": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "nullable": false
+                },
+                "smokedLast12mId": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "nullable": true
+                },
+                "smokedLast30dId": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "nullable": true
+                }
+              },
+              "foreignKeys": [
+                {
+                  "index": {
+                    "unique": [
+                      "respondentId"
+                    ]
+                  },
+                  "onDelete": "cascade",
+                  "source": {
+                    "columns": [
+                      "respondentId"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "TobaccoUse"
+                  },
+                  "target": {
+                    "columns": [
+                      "id"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "Respondent"
+                  }
+                },
+                {
+                  "index": {
+                    "name": "TobaccoUse_everSmokedId_idx_f3d24791"
+                  },
+                  "source": {
+                    "columns": [
+                      "everSmokedId"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "TobaccoUse"
+                  },
+                  "target": {
+                    "columns": [
+                      "id"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "CatAnswer"
+                  }
+                },
+                {
+                  "index": {
+                    "name": "TobaccoUse_firstUseTimingId_idx_4516a4d9"
+                  },
+                  "source": {
+                    "columns": [
+                      "firstUseTimingId"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "TobaccoUse"
+                  },
+                  "target": {
+                    "columns": [
+                      "id"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "CatFirstUseTiming"
+                  }
+                },
+                {
+                  "index": {
+                    "name": "TobaccoUse_smokedLast12mId_idx_6eff04ac"
+                  },
+                  "source": {
+                    "columns": [
+                      "smokedLast12mId"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "TobaccoUse"
+                  },
+                  "target": {
+                    "columns": [
+                      "id"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "CatAnswer"
+                  }
+                },
+                {
+                  "index": {
+                    "name": "TobaccoUse_smokedLast30dId_idx_3e005cf9"
+                  },
+                  "source": {
+                    "columns": [
+                      "smokedLast30dId"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "TobaccoUse"
+                  },
+                  "target": {
+                    "columns": [
+                      "id"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "CatAnswer"
+                  }
+                }
+              ],
+              "indexes": [
+                {
+                  "columns": [
+                    "everSmokedId"
+                  ],
+                  "name": "TobaccoUse_everSmokedId_idx_f3d24791",
+                  "prefix": "TobaccoUse_everSmokedId_idx",
+                  "unique": false
+                },
+                {
+                  "columns": [
+                    "firstUseTimingId"
+                  ],
+                  "name": "TobaccoUse_firstUseTimingId_idx_4516a4d9",
+                  "prefix": "TobaccoUse_firstUseTimingId_idx",
+                  "unique": false
+                },
+                {
+                  "columns": [
+                    "smokedLast12mId"
+                  ],
+                  "name": "TobaccoUse_smokedLast12mId_idx_6eff04ac",
+                  "prefix": "TobaccoUse_smokedLast12mId_idx",
+                  "unique": false
+                },
+                {
+                  "columns": [
+                    "smokedLast30dId"
+                  ],
+                  "name": "TobaccoUse_smokedLast30dId_idx_3e005cf9",
+                  "prefix": "TobaccoUse_smokedLast30dId_idx",
+                  "unique": false
+                }
+              ],
+              "primaryKey": {
+                "columns": [
+                  "id"
+                ]
+              },
+              "uniques": [
+                {
+                  "columns": [
+                    "respondentId"
+                  ]
+                }
+              ]
+            },
+            "VapeUse": {
+              "columns": {
+                "ageFirstUse": {
+                  "codecId": "pg/int2@1",
+                  "dataType": "pg/int2",
+                  "nullable": true
+                },
+                "everVapedId": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "nullable": false
+                },
+                "id": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "default": {
+                    "expression": "autoincrement()",
+                    "kind": "function"
+                  },
+                  "nullable": false
+                },
+                "respondentId": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "nullable": false
+                },
+                "vapedLast30dId": {
+                  "codecId": "pg/int4@1",
+                  "dataType": "pg/int4",
+                  "nullable": true
+                }
+              },
+              "foreignKeys": [
+                {
+                  "index": {
+                    "unique": [
+                      "respondentId"
+                    ]
+                  },
+                  "onDelete": "cascade",
+                  "source": {
+                    "columns": [
+                      "respondentId"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "VapeUse"
+                  },
+                  "target": {
+                    "columns": [
+                      "id"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "Respondent"
+                  }
+                },
+                {
+                  "index": {
+                    "name": "VapeUse_everVapedId_idx_61a3f735"
+                  },
+                  "source": {
+                    "columns": [
+                      "everVapedId"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "VapeUse"
+                  },
+                  "target": {
+                    "columns": [
+                      "id"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "CatAnswer"
+                  }
+                },
+                {
+                  "index": {
+                    "name": "VapeUse_vapedLast30dId_idx_1bdfdb2a"
+                  },
+                  "source": {
+                    "columns": [
+                      "vapedLast30dId"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "VapeUse"
+                  },
+                  "target": {
+                    "columns": [
+                      "id"
+                    ],
+                    "namespaceId": "public",
+                    "tableName": "CatAnswer"
+                  }
+                }
+              ],
+              "indexes": [
+                {
+                  "columns": [
+                    "everVapedId"
+                  ],
+                  "name": "VapeUse_everVapedId_idx_61a3f735",
+                  "prefix": "VapeUse_everVapedId_idx",
+                  "unique": false
+                },
+                {
+                  "columns": [
+                    "vapedLast30dId"
+                  ],
+                  "name": "VapeUse_vapedLast30dId_idx_1bdfdb2a",
+                  "prefix": "VapeUse_vapedLast30dId_idx",
+                  "unique": false
+                }
+              ],
+              "primaryKey": {
+                "columns": [
+                  "id"
+                ]
+              },
+              "uniques": [
+                {
+                  "columns": [
+                    "respondentId"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "id": "public",
+        "kind": "postgres-schema"
+      }
+    },
+    "storageHash": "1db3eec48a657547ec050718250b95c5e3f21c9bd5e5ce850f2fc2c7d04eb320"
+  },
+  "capabilities": {
+    "postgres": {
+      "distinctOn": true,
+      "forKeyShare": true,
+      "forNoKeyUpdate": true,
+      "jsonAgg": true,
+      "lateral": true,
+      "limit": true,
+      "orderBy": true,
+      "returning": true
+    },
+    "sql": {
+      "checkConstraint": true,
+      "defaultInInsert": true,
+      "enums": true,
+      "forShare": true,
+      "forUpdate": true,
+      "insertOnConflictSkip": true,
+      "insertOnConflictWithoutTarget": true,
+      "lateral": true,
+      "lockNowait": true,
+      "lockOf": true,
+      "lockSkipLocked": true,
+      "returning": true,
+      "scalarList": true
+    }
+  },
+  "extensions": {},
+  "meta": {},
+  "_generated": {
+    "warning": "⚠️  GENERATED FILE - DO NOT EDIT",
+    "message": "This file is automatically generated by \"prisma contract emit\".",
+    "regenerate": "To regenerate, run: prisma contract emit"
+  }
+}

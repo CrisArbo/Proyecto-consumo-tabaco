@@ -1,0 +1,2341 @@
+[
+  {
+    "id": "schema.public",
+    "label": "Create schema \"public\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres"
+    },
+    "precheck": [],
+    "execute": [
+      {
+        "description": "Create schema \"public\"",
+        "sql": "CREATE SCHEMA IF NOT EXISTS \"public\"",
+        "params": []
+      }
+    ],
+    "postcheck": []
+  },
+  {
+    "id": "table.CatActivity",
+    "label": "Create table \"CatActivity\"",
+    "summary": "Creates table \"CatActivity\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "CatActivity"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"CatActivity\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"CatActivity\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"CatActivity\"",
+        "sql": "CREATE TABLE \"public\".\"CatActivity\" (\n  \"code\" int2 NOT NULL,\n  \"id\" SERIAL NOT NULL,\n  \"label\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"CatActivity\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"CatActivity\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.CatAnswer",
+    "label": "Create table \"CatAnswer\"",
+    "summary": "Creates table \"CatAnswer\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "CatAnswer"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"CatAnswer\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"CatAnswer\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"CatAnswer\"",
+        "sql": "CREATE TABLE \"public\".\"CatAnswer\" (\n  \"code\" int2 NOT NULL,\n  \"id\" SERIAL NOT NULL,\n  \"label\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"CatAnswer\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"CatAnswer\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.CatEducationLevel",
+    "label": "Create table \"CatEducationLevel\"",
+    "summary": "Creates table \"CatEducationLevel\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "CatEducationLevel"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"CatEducationLevel\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"CatEducationLevel\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"CatEducationLevel\"",
+        "sql": "CREATE TABLE \"public\".\"CatEducationLevel\" (\n  \"code\" int2 NOT NULL,\n  \"id\" SERIAL NOT NULL,\n  \"label\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"CatEducationLevel\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"CatEducationLevel\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.CatFirstUseTiming",
+    "label": "Create table \"CatFirstUseTiming\"",
+    "summary": "Creates table \"CatFirstUseTiming\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "CatFirstUseTiming"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"CatFirstUseTiming\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"CatFirstUseTiming\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"CatFirstUseTiming\"",
+        "sql": "CREATE TABLE \"public\".\"CatFirstUseTiming\" (\n  \"code\" int2 NOT NULL,\n  \"id\" SERIAL NOT NULL,\n  \"label\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"CatFirstUseTiming\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"CatFirstUseTiming\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.CatGender",
+    "label": "Create table \"CatGender\"",
+    "summary": "Creates table \"CatGender\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "CatGender"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"CatGender\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"CatGender\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"CatGender\"",
+        "sql": "CREATE TABLE \"public\".\"CatGender\" (\n  \"code\" int2 NOT NULL,\n  \"id\" SERIAL NOT NULL,\n  \"label\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"CatGender\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"CatGender\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.CatHealthStatus",
+    "label": "Create table \"CatHealthStatus\"",
+    "summary": "Creates table \"CatHealthStatus\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "CatHealthStatus"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"CatHealthStatus\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"CatHealthStatus\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"CatHealthStatus\"",
+        "sql": "CREATE TABLE \"public\".\"CatHealthStatus\" (\n  \"code\" int2 NOT NULL,\n  \"id\" SERIAL NOT NULL,\n  \"label\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"CatHealthStatus\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"CatHealthStatus\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.CatRisk",
+    "label": "Create table \"CatRisk\"",
+    "summary": "Creates table \"CatRisk\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "CatRisk"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"CatRisk\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"CatRisk\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"CatRisk\"",
+        "sql": "CREATE TABLE \"public\".\"CatRisk\" (\n  \"code\" int2 NOT NULL,\n  \"id\" SERIAL NOT NULL,\n  \"label\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"CatRisk\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"CatRisk\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.Household",
+    "label": "Create table \"Household\"",
+    "summary": "Creates table \"Household\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "Household"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"Household\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Household\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"Household\"",
+        "sql": "CREATE TABLE \"public\".\"Household\" (\n  \"id\" SERIAL NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"Household\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Household\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.Person",
+    "label": "Create table \"Person\"",
+    "summary": "Creates table \"Person\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "Person"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"Person\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Person\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"Person\"",
+        "sql": "CREATE TABLE \"public\".\"Person\" (\n  \"age\" int2 NOT NULL,\n  \"genderId\" int4 NOT NULL,\n  \"householdId\" int4 NOT NULL,\n  \"id\" SERIAL NOT NULL,\n  \"pSequence\" int2 NOT NULL,\n  \"personOrder\" int2 NOT NULL,\n  \"surveySequence\" int2 NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"Person\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Person\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.Respondent",
+    "label": "Create table \"Respondent\"",
+    "summary": "Creates table \"Respondent\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "Respondent"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"Respondent\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Respondent\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"Respondent\"",
+        "sql": "CREATE TABLE \"public\".\"Respondent\" (\n  \"educationLevelId\" int4 NOT NULL,\n  \"healthStatusId\" int4 NOT NULL,\n  \"id\" SERIAL NOT NULL,\n  \"mainActivityId\" int4 NOT NULL,\n  \"personId\" int4 NOT NULL,\n  \"smokingRiskId\" int4 NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"Respondent\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Respondent\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.TobaccoUse",
+    "label": "Create table \"TobaccoUse\"",
+    "summary": "Creates table \"TobaccoUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "TobaccoUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"TobaccoUse\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"TobaccoUse\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"TobaccoUse\"",
+        "sql": "CREATE TABLE \"public\".\"TobaccoUse\" (\n  \"ageFirstUse\" int2,\n  \"everSmokedId\" int4 NOT NULL,\n  \"firstUseTimingId\" int4,\n  \"id\" SERIAL NOT NULL,\n  \"respondentId\" int4 NOT NULL,\n  \"smokedLast12mId\" int4,\n  \"smokedLast30dId\" int4,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"TobaccoUse\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"TobaccoUse\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.VapeUse",
+    "label": "Create table \"VapeUse\"",
+    "summary": "Creates table \"VapeUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "VapeUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"VapeUse\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"VapeUse\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"VapeUse\"",
+        "sql": "CREATE TABLE \"public\".\"VapeUse\" (\n  \"ageFirstUse\" int2,\n  \"everVapedId\" int4 NOT NULL,\n  \"id\" SERIAL NOT NULL,\n  \"respondentId\" int4 NOT NULL,\n  \"vapedLast30dId\" int4,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"VapeUse\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"VapeUse\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.CatActivity.CatActivity_code_key",
+    "label": "Add unique constraint on \"CatActivity\" (code)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "CatActivity_code_key",
+        "table": "CatActivity"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"CatActivity_code_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatActivity_code_key",
+          "public",
+          "\"public\".\"CatActivity\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"CatActivity_code_key\"",
+        "sql": "ALTER TABLE \"public\".\"CatActivity\" ADD CONSTRAINT \"CatActivity_code_key\" UNIQUE (\"code\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"CatActivity_code_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatActivity_code_key",
+          "public",
+          "\"public\".\"CatActivity\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.CatActivity.CatActivity_label_key",
+    "label": "Add unique constraint on \"CatActivity\" (label)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "CatActivity_label_key",
+        "table": "CatActivity"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"CatActivity_label_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatActivity_label_key",
+          "public",
+          "\"public\".\"CatActivity\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"CatActivity_label_key\"",
+        "sql": "ALTER TABLE \"public\".\"CatActivity\" ADD CONSTRAINT \"CatActivity_label_key\" UNIQUE (\"label\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"CatActivity_label_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatActivity_label_key",
+          "public",
+          "\"public\".\"CatActivity\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.CatAnswer.CatAnswer_code_key",
+    "label": "Add unique constraint on \"CatAnswer\" (code)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "CatAnswer_code_key",
+        "table": "CatAnswer"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"CatAnswer_code_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatAnswer_code_key",
+          "public",
+          "\"public\".\"CatAnswer\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"CatAnswer_code_key\"",
+        "sql": "ALTER TABLE \"public\".\"CatAnswer\" ADD CONSTRAINT \"CatAnswer_code_key\" UNIQUE (\"code\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"CatAnswer_code_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatAnswer_code_key",
+          "public",
+          "\"public\".\"CatAnswer\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.CatAnswer.CatAnswer_label_key",
+    "label": "Add unique constraint on \"CatAnswer\" (label)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "CatAnswer_label_key",
+        "table": "CatAnswer"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"CatAnswer_label_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatAnswer_label_key",
+          "public",
+          "\"public\".\"CatAnswer\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"CatAnswer_label_key\"",
+        "sql": "ALTER TABLE \"public\".\"CatAnswer\" ADD CONSTRAINT \"CatAnswer_label_key\" UNIQUE (\"label\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"CatAnswer_label_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatAnswer_label_key",
+          "public",
+          "\"public\".\"CatAnswer\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.CatEducationLevel.CatEducationLevel_code_key",
+    "label": "Add unique constraint on \"CatEducationLevel\" (code)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "CatEducationLevel_code_key",
+        "table": "CatEducationLevel"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"CatEducationLevel_code_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatEducationLevel_code_key",
+          "public",
+          "\"public\".\"CatEducationLevel\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"CatEducationLevel_code_key\"",
+        "sql": "ALTER TABLE \"public\".\"CatEducationLevel\" ADD CONSTRAINT \"CatEducationLevel_code_key\" UNIQUE (\"code\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"CatEducationLevel_code_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatEducationLevel_code_key",
+          "public",
+          "\"public\".\"CatEducationLevel\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.CatEducationLevel.CatEducationLevel_label_key",
+    "label": "Add unique constraint on \"CatEducationLevel\" (label)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "CatEducationLevel_label_key",
+        "table": "CatEducationLevel"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"CatEducationLevel_label_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatEducationLevel_label_key",
+          "public",
+          "\"public\".\"CatEducationLevel\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"CatEducationLevel_label_key\"",
+        "sql": "ALTER TABLE \"public\".\"CatEducationLevel\" ADD CONSTRAINT \"CatEducationLevel_label_key\" UNIQUE (\"label\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"CatEducationLevel_label_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatEducationLevel_label_key",
+          "public",
+          "\"public\".\"CatEducationLevel\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.CatFirstUseTiming.CatFirstUseTiming_code_key",
+    "label": "Add unique constraint on \"CatFirstUseTiming\" (code)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "CatFirstUseTiming_code_key",
+        "table": "CatFirstUseTiming"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"CatFirstUseTiming_code_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatFirstUseTiming_code_key",
+          "public",
+          "\"public\".\"CatFirstUseTiming\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"CatFirstUseTiming_code_key\"",
+        "sql": "ALTER TABLE \"public\".\"CatFirstUseTiming\" ADD CONSTRAINT \"CatFirstUseTiming_code_key\" UNIQUE (\"code\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"CatFirstUseTiming_code_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatFirstUseTiming_code_key",
+          "public",
+          "\"public\".\"CatFirstUseTiming\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.CatFirstUseTiming.CatFirstUseTiming_label_key",
+    "label": "Add unique constraint on \"CatFirstUseTiming\" (label)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "CatFirstUseTiming_label_key",
+        "table": "CatFirstUseTiming"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"CatFirstUseTiming_label_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatFirstUseTiming_label_key",
+          "public",
+          "\"public\".\"CatFirstUseTiming\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"CatFirstUseTiming_label_key\"",
+        "sql": "ALTER TABLE \"public\".\"CatFirstUseTiming\" ADD CONSTRAINT \"CatFirstUseTiming_label_key\" UNIQUE (\"label\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"CatFirstUseTiming_label_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatFirstUseTiming_label_key",
+          "public",
+          "\"public\".\"CatFirstUseTiming\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.CatGender.CatGender_code_key",
+    "label": "Add unique constraint on \"CatGender\" (code)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "CatGender_code_key",
+        "table": "CatGender"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"CatGender_code_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatGender_code_key",
+          "public",
+          "\"public\".\"CatGender\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"CatGender_code_key\"",
+        "sql": "ALTER TABLE \"public\".\"CatGender\" ADD CONSTRAINT \"CatGender_code_key\" UNIQUE (\"code\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"CatGender_code_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatGender_code_key",
+          "public",
+          "\"public\".\"CatGender\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.CatGender.CatGender_label_key",
+    "label": "Add unique constraint on \"CatGender\" (label)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "CatGender_label_key",
+        "table": "CatGender"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"CatGender_label_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatGender_label_key",
+          "public",
+          "\"public\".\"CatGender\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"CatGender_label_key\"",
+        "sql": "ALTER TABLE \"public\".\"CatGender\" ADD CONSTRAINT \"CatGender_label_key\" UNIQUE (\"label\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"CatGender_label_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatGender_label_key",
+          "public",
+          "\"public\".\"CatGender\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.CatHealthStatus.CatHealthStatus_code_key",
+    "label": "Add unique constraint on \"CatHealthStatus\" (code)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "CatHealthStatus_code_key",
+        "table": "CatHealthStatus"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"CatHealthStatus_code_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatHealthStatus_code_key",
+          "public",
+          "\"public\".\"CatHealthStatus\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"CatHealthStatus_code_key\"",
+        "sql": "ALTER TABLE \"public\".\"CatHealthStatus\" ADD CONSTRAINT \"CatHealthStatus_code_key\" UNIQUE (\"code\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"CatHealthStatus_code_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatHealthStatus_code_key",
+          "public",
+          "\"public\".\"CatHealthStatus\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.CatHealthStatus.CatHealthStatus_label_key",
+    "label": "Add unique constraint on \"CatHealthStatus\" (label)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "CatHealthStatus_label_key",
+        "table": "CatHealthStatus"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"CatHealthStatus_label_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatHealthStatus_label_key",
+          "public",
+          "\"public\".\"CatHealthStatus\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"CatHealthStatus_label_key\"",
+        "sql": "ALTER TABLE \"public\".\"CatHealthStatus\" ADD CONSTRAINT \"CatHealthStatus_label_key\" UNIQUE (\"label\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"CatHealthStatus_label_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatHealthStatus_label_key",
+          "public",
+          "\"public\".\"CatHealthStatus\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.CatRisk.CatRisk_code_key",
+    "label": "Add unique constraint on \"CatRisk\" (code)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "CatRisk_code_key",
+        "table": "CatRisk"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"CatRisk_code_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatRisk_code_key",
+          "public",
+          "\"public\".\"CatRisk\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"CatRisk_code_key\"",
+        "sql": "ALTER TABLE \"public\".\"CatRisk\" ADD CONSTRAINT \"CatRisk_code_key\" UNIQUE (\"code\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"CatRisk_code_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatRisk_code_key",
+          "public",
+          "\"public\".\"CatRisk\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.CatRisk.CatRisk_label_key",
+    "label": "Add unique constraint on \"CatRisk\" (label)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "CatRisk_label_key",
+        "table": "CatRisk"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"CatRisk_label_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatRisk_label_key",
+          "public",
+          "\"public\".\"CatRisk\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"CatRisk_label_key\"",
+        "sql": "ALTER TABLE \"public\".\"CatRisk\" ADD CONSTRAINT \"CatRisk_label_key\" UNIQUE (\"label\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"CatRisk_label_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "CatRisk_label_key",
+          "public",
+          "\"public\".\"CatRisk\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.Person.Person_householdId_personOrder_key",
+    "label": "Add unique constraint on \"Person\" (householdId, personOrder)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "Person_householdId_personOrder_key",
+        "table": "Person"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"Person_householdId_personOrder_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Person_householdId_personOrder_key",
+          "public",
+          "\"public\".\"Person\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"Person_householdId_personOrder_key\"",
+        "sql": "ALTER TABLE \"public\".\"Person\" ADD CONSTRAINT \"Person_householdId_personOrder_key\" UNIQUE (\"householdId\", \"personOrder\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"Person_householdId_personOrder_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Person_householdId_personOrder_key",
+          "public",
+          "\"public\".\"Person\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.Respondent.Respondent_personId_key",
+    "label": "Add unique constraint on \"Respondent\" (personId)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "Respondent_personId_key",
+        "table": "Respondent"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"Respondent_personId_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Respondent_personId_key",
+          "public",
+          "\"public\".\"Respondent\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"Respondent_personId_key\"",
+        "sql": "ALTER TABLE \"public\".\"Respondent\" ADD CONSTRAINT \"Respondent_personId_key\" UNIQUE (\"personId\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"Respondent_personId_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Respondent_personId_key",
+          "public",
+          "\"public\".\"Respondent\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.TobaccoUse.TobaccoUse_respondentId_key",
+    "label": "Add unique constraint on \"TobaccoUse\" (respondentId)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "TobaccoUse_respondentId_key",
+        "table": "TobaccoUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"TobaccoUse_respondentId_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "TobaccoUse_respondentId_key",
+          "public",
+          "\"public\".\"TobaccoUse\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"TobaccoUse_respondentId_key\"",
+        "sql": "ALTER TABLE \"public\".\"TobaccoUse\" ADD CONSTRAINT \"TobaccoUse_respondentId_key\" UNIQUE (\"respondentId\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"TobaccoUse_respondentId_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "TobaccoUse_respondentId_key",
+          "public",
+          "\"public\".\"TobaccoUse\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.VapeUse.VapeUse_respondentId_key",
+    "label": "Add unique constraint on \"VapeUse\" (respondentId)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "VapeUse_respondentId_key",
+        "table": "VapeUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"VapeUse_respondentId_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "VapeUse_respondentId_key",
+          "public",
+          "\"public\".\"VapeUse\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"VapeUse_respondentId_key\"",
+        "sql": "ALTER TABLE \"public\".\"VapeUse\" ADD CONSTRAINT \"VapeUse_respondentId_key\" UNIQUE (\"respondentId\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"VapeUse_respondentId_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "VapeUse_respondentId_key",
+          "public",
+          "\"public\".\"VapeUse\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.Person.Person_genderId_idx_f5331e2a",
+    "label": "Create index \"Person_genderId_idx_f5331e2a\" on \"Person\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "Person_genderId_idx_f5331e2a",
+        "table": "Person"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"Person_genderId_idx_f5331e2a\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Person_genderId_idx_f5331e2a\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"Person_genderId_idx_f5331e2a\"",
+        "sql": "CREATE INDEX \"Person_genderId_idx_f5331e2a\" ON \"public\".\"Person\" (\"genderId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"Person_genderId_idx_f5331e2a\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Person_genderId_idx_f5331e2a\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.Person.Person_householdId_idx_fb33d798",
+    "label": "Create index \"Person_householdId_idx_fb33d798\" on \"Person\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "Person_householdId_idx_fb33d798",
+        "table": "Person"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"Person_householdId_idx_fb33d798\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Person_householdId_idx_fb33d798\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"Person_householdId_idx_fb33d798\"",
+        "sql": "CREATE INDEX \"Person_householdId_idx_fb33d798\" ON \"public\".\"Person\" (\"householdId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"Person_householdId_idx_fb33d798\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Person_householdId_idx_fb33d798\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.Respondent.Respondent_educationLevelId_idx_c4962183",
+    "label": "Create index \"Respondent_educationLevelId_idx_c4962183\" on \"Respondent\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "Respondent_educationLevelId_idx_c4962183",
+        "table": "Respondent"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"Respondent_educationLevelId_idx_c4962183\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Respondent_educationLevelId_idx_c4962183\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"Respondent_educationLevelId_idx_c4962183\"",
+        "sql": "CREATE INDEX \"Respondent_educationLevelId_idx_c4962183\" ON \"public\".\"Respondent\" (\"educationLevelId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"Respondent_educationLevelId_idx_c4962183\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Respondent_educationLevelId_idx_c4962183\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.Respondent.Respondent_healthStatusId_idx_e5cadaeb",
+    "label": "Create index \"Respondent_healthStatusId_idx_e5cadaeb\" on \"Respondent\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "Respondent_healthStatusId_idx_e5cadaeb",
+        "table": "Respondent"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"Respondent_healthStatusId_idx_e5cadaeb\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Respondent_healthStatusId_idx_e5cadaeb\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"Respondent_healthStatusId_idx_e5cadaeb\"",
+        "sql": "CREATE INDEX \"Respondent_healthStatusId_idx_e5cadaeb\" ON \"public\".\"Respondent\" (\"healthStatusId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"Respondent_healthStatusId_idx_e5cadaeb\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Respondent_healthStatusId_idx_e5cadaeb\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.Respondent.Respondent_mainActivityId_idx_3c038aef",
+    "label": "Create index \"Respondent_mainActivityId_idx_3c038aef\" on \"Respondent\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "Respondent_mainActivityId_idx_3c038aef",
+        "table": "Respondent"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"Respondent_mainActivityId_idx_3c038aef\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Respondent_mainActivityId_idx_3c038aef\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"Respondent_mainActivityId_idx_3c038aef\"",
+        "sql": "CREATE INDEX \"Respondent_mainActivityId_idx_3c038aef\" ON \"public\".\"Respondent\" (\"mainActivityId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"Respondent_mainActivityId_idx_3c038aef\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Respondent_mainActivityId_idx_3c038aef\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.Respondent.Respondent_smokingRiskId_idx_01287455",
+    "label": "Create index \"Respondent_smokingRiskId_idx_01287455\" on \"Respondent\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "Respondent_smokingRiskId_idx_01287455",
+        "table": "Respondent"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"Respondent_smokingRiskId_idx_01287455\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Respondent_smokingRiskId_idx_01287455\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"Respondent_smokingRiskId_idx_01287455\"",
+        "sql": "CREATE INDEX \"Respondent_smokingRiskId_idx_01287455\" ON \"public\".\"Respondent\" (\"smokingRiskId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"Respondent_smokingRiskId_idx_01287455\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"Respondent_smokingRiskId_idx_01287455\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.TobaccoUse.TobaccoUse_everSmokedId_idx_f3d24791",
+    "label": "Create index \"TobaccoUse_everSmokedId_idx_f3d24791\" on \"TobaccoUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "TobaccoUse_everSmokedId_idx_f3d24791",
+        "table": "TobaccoUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"TobaccoUse_everSmokedId_idx_f3d24791\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"TobaccoUse_everSmokedId_idx_f3d24791\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"TobaccoUse_everSmokedId_idx_f3d24791\"",
+        "sql": "CREATE INDEX \"TobaccoUse_everSmokedId_idx_f3d24791\" ON \"public\".\"TobaccoUse\" (\"everSmokedId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"TobaccoUse_everSmokedId_idx_f3d24791\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"TobaccoUse_everSmokedId_idx_f3d24791\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.TobaccoUse.TobaccoUse_firstUseTimingId_idx_4516a4d9",
+    "label": "Create index \"TobaccoUse_firstUseTimingId_idx_4516a4d9\" on \"TobaccoUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "TobaccoUse_firstUseTimingId_idx_4516a4d9",
+        "table": "TobaccoUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"TobaccoUse_firstUseTimingId_idx_4516a4d9\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"TobaccoUse_firstUseTimingId_idx_4516a4d9\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"TobaccoUse_firstUseTimingId_idx_4516a4d9\"",
+        "sql": "CREATE INDEX \"TobaccoUse_firstUseTimingId_idx_4516a4d9\" ON \"public\".\"TobaccoUse\" (\"firstUseTimingId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"TobaccoUse_firstUseTimingId_idx_4516a4d9\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"TobaccoUse_firstUseTimingId_idx_4516a4d9\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.TobaccoUse.TobaccoUse_smokedLast12mId_idx_6eff04ac",
+    "label": "Create index \"TobaccoUse_smokedLast12mId_idx_6eff04ac\" on \"TobaccoUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "TobaccoUse_smokedLast12mId_idx_6eff04ac",
+        "table": "TobaccoUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"TobaccoUse_smokedLast12mId_idx_6eff04ac\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"TobaccoUse_smokedLast12mId_idx_6eff04ac\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"TobaccoUse_smokedLast12mId_idx_6eff04ac\"",
+        "sql": "CREATE INDEX \"TobaccoUse_smokedLast12mId_idx_6eff04ac\" ON \"public\".\"TobaccoUse\" (\"smokedLast12mId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"TobaccoUse_smokedLast12mId_idx_6eff04ac\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"TobaccoUse_smokedLast12mId_idx_6eff04ac\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.TobaccoUse.TobaccoUse_smokedLast30dId_idx_3e005cf9",
+    "label": "Create index \"TobaccoUse_smokedLast30dId_idx_3e005cf9\" on \"TobaccoUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "TobaccoUse_smokedLast30dId_idx_3e005cf9",
+        "table": "TobaccoUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"TobaccoUse_smokedLast30dId_idx_3e005cf9\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"TobaccoUse_smokedLast30dId_idx_3e005cf9\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"TobaccoUse_smokedLast30dId_idx_3e005cf9\"",
+        "sql": "CREATE INDEX \"TobaccoUse_smokedLast30dId_idx_3e005cf9\" ON \"public\".\"TobaccoUse\" (\"smokedLast30dId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"TobaccoUse_smokedLast30dId_idx_3e005cf9\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"TobaccoUse_smokedLast30dId_idx_3e005cf9\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.VapeUse.VapeUse_everVapedId_idx_61a3f735",
+    "label": "Create index \"VapeUse_everVapedId_idx_61a3f735\" on \"VapeUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "VapeUse_everVapedId_idx_61a3f735",
+        "table": "VapeUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"VapeUse_everVapedId_idx_61a3f735\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"VapeUse_everVapedId_idx_61a3f735\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"VapeUse_everVapedId_idx_61a3f735\"",
+        "sql": "CREATE INDEX \"VapeUse_everVapedId_idx_61a3f735\" ON \"public\".\"VapeUse\" (\"everVapedId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"VapeUse_everVapedId_idx_61a3f735\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"VapeUse_everVapedId_idx_61a3f735\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.VapeUse.VapeUse_vapedLast30dId_idx_1bdfdb2a",
+    "label": "Create index \"VapeUse_vapedLast30dId_idx_1bdfdb2a\" on \"VapeUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "VapeUse_vapedLast30dId_idx_1bdfdb2a",
+        "table": "VapeUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"VapeUse_vapedLast30dId_idx_1bdfdb2a\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"VapeUse_vapedLast30dId_idx_1bdfdb2a\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"VapeUse_vapedLast30dId_idx_1bdfdb2a\"",
+        "sql": "CREATE INDEX \"VapeUse_vapedLast30dId_idx_1bdfdb2a\" ON \"public\".\"VapeUse\" (\"vapedLast30dId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"VapeUse_vapedLast30dId_idx_1bdfdb2a\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"VapeUse_vapedLast30dId_idx_1bdfdb2a\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.Person.Person_householdId_fkey",
+    "label": "Add foreign key \"Person_householdId_fkey\" on \"Person\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "Person_householdId_fkey",
+        "table": "Person"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"Person_householdId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Person_householdId_fkey",
+          "public",
+          "\"public\".\"Person\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"Person_householdId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"Person\"\nADD CONSTRAINT \"Person_householdId_fkey\"\nFOREIGN KEY (\"householdId\")\nREFERENCES \"public\".\"Household\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"Person_householdId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Person_householdId_fkey",
+          "public",
+          "\"public\".\"Person\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.Person.Person_genderId_fkey",
+    "label": "Add foreign key \"Person_genderId_fkey\" on \"Person\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "Person_genderId_fkey",
+        "table": "Person"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"Person_genderId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Person_genderId_fkey",
+          "public",
+          "\"public\".\"Person\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"Person_genderId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"Person\"\nADD CONSTRAINT \"Person_genderId_fkey\"\nFOREIGN KEY (\"genderId\")\nREFERENCES \"public\".\"CatGender\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"Person_genderId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Person_genderId_fkey",
+          "public",
+          "\"public\".\"Person\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.Respondent.Respondent_personId_fkey",
+    "label": "Add foreign key \"Respondent_personId_fkey\" on \"Respondent\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "Respondent_personId_fkey",
+        "table": "Respondent"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"Respondent_personId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Respondent_personId_fkey",
+          "public",
+          "\"public\".\"Respondent\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"Respondent_personId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"Respondent\"\nADD CONSTRAINT \"Respondent_personId_fkey\"\nFOREIGN KEY (\"personId\")\nREFERENCES \"public\".\"Person\" (\"id\")\nON DELETE CASCADE"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"Respondent_personId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Respondent_personId_fkey",
+          "public",
+          "\"public\".\"Respondent\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.Respondent.Respondent_mainActivityId_fkey",
+    "label": "Add foreign key \"Respondent_mainActivityId_fkey\" on \"Respondent\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "Respondent_mainActivityId_fkey",
+        "table": "Respondent"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"Respondent_mainActivityId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Respondent_mainActivityId_fkey",
+          "public",
+          "\"public\".\"Respondent\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"Respondent_mainActivityId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"Respondent\"\nADD CONSTRAINT \"Respondent_mainActivityId_fkey\"\nFOREIGN KEY (\"mainActivityId\")\nREFERENCES \"public\".\"CatActivity\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"Respondent_mainActivityId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Respondent_mainActivityId_fkey",
+          "public",
+          "\"public\".\"Respondent\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.Respondent.Respondent_healthStatusId_fkey",
+    "label": "Add foreign key \"Respondent_healthStatusId_fkey\" on \"Respondent\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "Respondent_healthStatusId_fkey",
+        "table": "Respondent"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"Respondent_healthStatusId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Respondent_healthStatusId_fkey",
+          "public",
+          "\"public\".\"Respondent\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"Respondent_healthStatusId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"Respondent\"\nADD CONSTRAINT \"Respondent_healthStatusId_fkey\"\nFOREIGN KEY (\"healthStatusId\")\nREFERENCES \"public\".\"CatHealthStatus\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"Respondent_healthStatusId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Respondent_healthStatusId_fkey",
+          "public",
+          "\"public\".\"Respondent\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.Respondent.Respondent_smokingRiskId_fkey",
+    "label": "Add foreign key \"Respondent_smokingRiskId_fkey\" on \"Respondent\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "Respondent_smokingRiskId_fkey",
+        "table": "Respondent"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"Respondent_smokingRiskId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Respondent_smokingRiskId_fkey",
+          "public",
+          "\"public\".\"Respondent\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"Respondent_smokingRiskId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"Respondent\"\nADD CONSTRAINT \"Respondent_smokingRiskId_fkey\"\nFOREIGN KEY (\"smokingRiskId\")\nREFERENCES \"public\".\"CatRisk\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"Respondent_smokingRiskId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Respondent_smokingRiskId_fkey",
+          "public",
+          "\"public\".\"Respondent\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.Respondent.Respondent_educationLevelId_fkey",
+    "label": "Add foreign key \"Respondent_educationLevelId_fkey\" on \"Respondent\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "Respondent_educationLevelId_fkey",
+        "table": "Respondent"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"Respondent_educationLevelId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Respondent_educationLevelId_fkey",
+          "public",
+          "\"public\".\"Respondent\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"Respondent_educationLevelId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"Respondent\"\nADD CONSTRAINT \"Respondent_educationLevelId_fkey\"\nFOREIGN KEY (\"educationLevelId\")\nREFERENCES \"public\".\"CatEducationLevel\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"Respondent_educationLevelId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "Respondent_educationLevelId_fkey",
+          "public",
+          "\"public\".\"Respondent\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.TobaccoUse.TobaccoUse_respondentId_fkey",
+    "label": "Add foreign key \"TobaccoUse_respondentId_fkey\" on \"TobaccoUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "TobaccoUse_respondentId_fkey",
+        "table": "TobaccoUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"TobaccoUse_respondentId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "TobaccoUse_respondentId_fkey",
+          "public",
+          "\"public\".\"TobaccoUse\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"TobaccoUse_respondentId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"TobaccoUse\"\nADD CONSTRAINT \"TobaccoUse_respondentId_fkey\"\nFOREIGN KEY (\"respondentId\")\nREFERENCES \"public\".\"Respondent\" (\"id\")\nON DELETE CASCADE"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"TobaccoUse_respondentId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "TobaccoUse_respondentId_fkey",
+          "public",
+          "\"public\".\"TobaccoUse\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.TobaccoUse.TobaccoUse_everSmokedId_fkey",
+    "label": "Add foreign key \"TobaccoUse_everSmokedId_fkey\" on \"TobaccoUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "TobaccoUse_everSmokedId_fkey",
+        "table": "TobaccoUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"TobaccoUse_everSmokedId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "TobaccoUse_everSmokedId_fkey",
+          "public",
+          "\"public\".\"TobaccoUse\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"TobaccoUse_everSmokedId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"TobaccoUse\"\nADD CONSTRAINT \"TobaccoUse_everSmokedId_fkey\"\nFOREIGN KEY (\"everSmokedId\")\nREFERENCES \"public\".\"CatAnswer\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"TobaccoUse_everSmokedId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "TobaccoUse_everSmokedId_fkey",
+          "public",
+          "\"public\".\"TobaccoUse\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.TobaccoUse.TobaccoUse_firstUseTimingId_fkey",
+    "label": "Add foreign key \"TobaccoUse_firstUseTimingId_fkey\" on \"TobaccoUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "TobaccoUse_firstUseTimingId_fkey",
+        "table": "TobaccoUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"TobaccoUse_firstUseTimingId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "TobaccoUse_firstUseTimingId_fkey",
+          "public",
+          "\"public\".\"TobaccoUse\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"TobaccoUse_firstUseTimingId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"TobaccoUse\"\nADD CONSTRAINT \"TobaccoUse_firstUseTimingId_fkey\"\nFOREIGN KEY (\"firstUseTimingId\")\nREFERENCES \"public\".\"CatFirstUseTiming\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"TobaccoUse_firstUseTimingId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "TobaccoUse_firstUseTimingId_fkey",
+          "public",
+          "\"public\".\"TobaccoUse\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.TobaccoUse.TobaccoUse_smokedLast12mId_fkey",
+    "label": "Add foreign key \"TobaccoUse_smokedLast12mId_fkey\" on \"TobaccoUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "TobaccoUse_smokedLast12mId_fkey",
+        "table": "TobaccoUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"TobaccoUse_smokedLast12mId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "TobaccoUse_smokedLast12mId_fkey",
+          "public",
+          "\"public\".\"TobaccoUse\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"TobaccoUse_smokedLast12mId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"TobaccoUse\"\nADD CONSTRAINT \"TobaccoUse_smokedLast12mId_fkey\"\nFOREIGN KEY (\"smokedLast12mId\")\nREFERENCES \"public\".\"CatAnswer\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"TobaccoUse_smokedLast12mId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "TobaccoUse_smokedLast12mId_fkey",
+          "public",
+          "\"public\".\"TobaccoUse\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.TobaccoUse.TobaccoUse_smokedLast30dId_fkey",
+    "label": "Add foreign key \"TobaccoUse_smokedLast30dId_fkey\" on \"TobaccoUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "TobaccoUse_smokedLast30dId_fkey",
+        "table": "TobaccoUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"TobaccoUse_smokedLast30dId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "TobaccoUse_smokedLast30dId_fkey",
+          "public",
+          "\"public\".\"TobaccoUse\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"TobaccoUse_smokedLast30dId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"TobaccoUse\"\nADD CONSTRAINT \"TobaccoUse_smokedLast30dId_fkey\"\nFOREIGN KEY (\"smokedLast30dId\")\nREFERENCES \"public\".\"CatAnswer\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"TobaccoUse_smokedLast30dId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "TobaccoUse_smokedLast30dId_fkey",
+          "public",
+          "\"public\".\"TobaccoUse\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.VapeUse.VapeUse_respondentId_fkey",
+    "label": "Add foreign key \"VapeUse_respondentId_fkey\" on \"VapeUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "VapeUse_respondentId_fkey",
+        "table": "VapeUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"VapeUse_respondentId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "VapeUse_respondentId_fkey",
+          "public",
+          "\"public\".\"VapeUse\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"VapeUse_respondentId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"VapeUse\"\nADD CONSTRAINT \"VapeUse_respondentId_fkey\"\nFOREIGN KEY (\"respondentId\")\nREFERENCES \"public\".\"Respondent\" (\"id\")\nON DELETE CASCADE"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"VapeUse_respondentId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "VapeUse_respondentId_fkey",
+          "public",
+          "\"public\".\"VapeUse\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.VapeUse.VapeUse_everVapedId_fkey",
+    "label": "Add foreign key \"VapeUse_everVapedId_fkey\" on \"VapeUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "VapeUse_everVapedId_fkey",
+        "table": "VapeUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"VapeUse_everVapedId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "VapeUse_everVapedId_fkey",
+          "public",
+          "\"public\".\"VapeUse\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"VapeUse_everVapedId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"VapeUse\"\nADD CONSTRAINT \"VapeUse_everVapedId_fkey\"\nFOREIGN KEY (\"everVapedId\")\nREFERENCES \"public\".\"CatAnswer\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"VapeUse_everVapedId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "VapeUse_everVapedId_fkey",
+          "public",
+          "\"public\".\"VapeUse\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.VapeUse.VapeUse_vapedLast30dId_fkey",
+    "label": "Add foreign key \"VapeUse_vapedLast30dId_fkey\" on \"VapeUse\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "VapeUse_vapedLast30dId_fkey",
+        "table": "VapeUse"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"VapeUse_vapedLast30dId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "VapeUse_vapedLast30dId_fkey",
+          "public",
+          "\"public\".\"VapeUse\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"VapeUse_vapedLast30dId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"VapeUse\"\nADD CONSTRAINT \"VapeUse_vapedLast30dId_fkey\"\nFOREIGN KEY (\"vapedLast30dId\")\nREFERENCES \"public\".\"CatAnswer\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"VapeUse_vapedLast30dId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "VapeUse_vapedLast30dId_fkey",
+          "public",
+          "\"public\".\"VapeUse\""
+        ]
+      }
+    ]
+  }
+]
