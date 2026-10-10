@@ -8,7 +8,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "contract:emit": "prisma contract emit"
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "contract:emit": "prisma contract emit",
+    "seed": "tsx src/scripts/csv_to_postgres.ts"
   },
   "dependencies": {
     "@prisma/orm-postgres": "8.0.0-rc.17",
@@ -32,8 +35,12 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.4.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.9",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "prisma": "8.0.0-rc.22",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   },
   "packageManager": "pnpm@12.3.4"
