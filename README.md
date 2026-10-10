@@ -1,17 +1,17 @@
 <p align="center">
-    <img src="./docs/banner.png" alt="banner"/>
+  <img src="./docs/banner.png" alt="banner"/>
+</p>
+
+<p align="center">   
+  <img src="https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white" alt="Next.js"/>
+  <img src="https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white" alt="Prisma"/>
+  <img src="https://img.shields.io/badge/Zod-3E67B1?logo=zod&logoColor=white" alt="Zod"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white" alt="PostgreSQL"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white" alt="Tailwind CSS"/>
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white" alt="Next.js"/>
-    <img src="https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white" alt="Prisma"/>
-    <img src="https://img.shields.io/badge/Zod-3E67B1?logo=zod&logoColor=white" alt="Zod"/>
-    <img src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white" alt="PostgreSQL"/>
-    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white" alt="Tailwind CSS"/>
-</p>
-
-<p align="center">
-    Prevalencia is a web platform for querying and visualizing information regarding tobacco consumption and the use of electronic cigarettes or nicotine vaporizers in Colombia.
+Prevalencia is a web platform for querying and visualizing information regarding tobacco consumption and the use of electronic cigarettes or nicotine vaporizers in Colombia.
 </p>
 
 ---
@@ -106,6 +106,14 @@ erDiagram
         text label
     }
 ```
+
+## Architecture Diagram
+
+<p align="center">
+  <img src="./docs/architecture-diagram.png" alt="architecture-diagram">
+</p>
+
+---
 
 ## License
 
