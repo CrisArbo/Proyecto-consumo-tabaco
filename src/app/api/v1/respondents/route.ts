@@ -6,8 +6,11 @@ import { respondentService } from "@/app/lib/services/respondent.service";
 export async function GET(req: NextRequest) {
   try {
     const { limit, offset } = parsePagination(req.nextUrl.searchParams);
-    const items = await respondentService.list(limit, offset);
-    return successResponse({ items, limit, offset });
+    const [items, total] = await Promise.all([
+      respondentService.list(limit, offset),
+      respondentService.count(),
+    ]);
+    return successResponse({ items, limit, offset, total });
   } catch (err) {
     return errorFromUnknown(err);
   }

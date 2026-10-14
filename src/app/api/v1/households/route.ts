@@ -6,8 +6,11 @@ import { householdService } from "@/app/lib/services/household.service";
 export async function GET(req: NextRequest) {
   try {
     const { limit, offset } = parsePagination(req.nextUrl.searchParams);
-    const items = await householdService.list(limit, offset);
-    return successResponse({ items, limit, offset });
+    const [items, total] = await Promise.all([
+      householdService.list(limit, offset),
+      householdService.count(),
+    ]);
+    return successResponse({ items, limit, offset, total });
   } catch (err) {
     return errorFromUnknown(err);
   }

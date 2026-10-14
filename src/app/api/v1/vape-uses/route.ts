@@ -6,8 +6,11 @@ import { vapeUseService } from "@/app/lib/services/vape-use.service";
 export async function GET(req: NextRequest) {
   try {
     const { limit, offset } = parsePagination(req.nextUrl.searchParams);
-    const items = await vapeUseService.list(limit, offset);
-    return successResponse({ items, limit, offset });
+    const [items, total] = await Promise.all([
+      vapeUseService.list(limit, offset),
+      vapeUseService.count(),
+    ]);
+    return successResponse({ items, limit, offset, total });
   } catch (err) {
     return errorFromUnknown(err);
   }

@@ -12,6 +12,11 @@ export const householdRepository = {
       .all();
   },
 
+  async count(): Promise<number> {
+    const { count } = await db.orm.public.Household.aggregate((a) => ({ count: a.count() }));
+    return count;
+  },
+
   async findOne(id: number): Promise<Household | null> {
     return db.orm.public.Household.first({ id });
   },

@@ -2,6 +2,7 @@ import { respondentRepository } from "@/app/lib/repositories/respondent.reposito
 
 export const respondentService = {
   list: (limit: number, offset: number) => respondentRepository.findAll(limit, offset),
+  count: () => respondentRepository.count(),
   get: (id: number) => respondentRepository.findOne(id),
   getByPerson: (personId: number) => respondentRepository.findByPerson(personId),
   update: (id: number, data: Parameters<typeof respondentRepository.update>[1]) =>

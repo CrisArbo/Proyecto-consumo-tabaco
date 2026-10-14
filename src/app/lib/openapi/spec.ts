@@ -203,7 +203,13 @@ export const openApiSpec = {
         responses: {
           "200": {
             description: "OK",
-            ...json(list(household, { limit: { type: "integer" }, offset: { type: "integer" } })),
+            ...json(
+              list(household, {
+                limit: { type: "integer" },
+                offset: { type: "integer" },
+                total: { type: "integer" },
+              }),
+            ),
           },
         },
       },
@@ -238,7 +244,13 @@ export const openApiSpec = {
         responses: {
           "200": {
             description: "OK",
-            ...json(list(person, { limit: { type: "integer" }, offset: { type: "integer" } })),
+            ...json(
+              list(person, {
+                limit: { type: "integer" },
+                offset: { type: "integer" },
+                total: { type: "integer" },
+              }),
+            ),
           },
         },
       },
@@ -280,7 +292,13 @@ export const openApiSpec = {
         responses: {
           "200": {
             description: "OK",
-            ...json(list(respondent, { limit: { type: "integer" }, offset: { type: "integer" } })),
+            ...json(
+              list(respondent, {
+                limit: { type: "integer" },
+                offset: { type: "integer" },
+                total: { type: "integer" },
+              }),
+            ),
           },
         },
       },
@@ -333,7 +351,13 @@ export const openApiSpec = {
         responses: {
           "200": {
             description: "OK",
-            ...json(list(tobaccoUse, { limit: { type: "integer" }, offset: { type: "integer" } })),
+            ...json(
+              list(tobaccoUse, {
+                limit: { type: "integer" },
+                offset: { type: "integer" },
+                total: { type: "integer" },
+              }),
+            ),
           },
         },
       },
@@ -367,7 +391,13 @@ export const openApiSpec = {
         responses: {
           "200": {
             description: "OK",
-            ...json(list(vapeUse, { limit: { type: "integer" }, offset: { type: "integer" } })),
+            ...json(
+              list(vapeUse, {
+                limit: { type: "integer" },
+                offset: { type: "integer" },
+                total: { type: "integer" },
+              }),
+            ),
           },
         },
       },

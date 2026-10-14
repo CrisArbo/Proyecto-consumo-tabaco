@@ -2,6 +2,7 @@ import { tobaccoUseRepository } from "@/app/lib/repositories/tobacco-use.reposit
 
 export const tobaccoUseService = {
   list: (limit: number, offset: number) => tobaccoUseRepository.findAll(limit, offset),
+  count: () => tobaccoUseRepository.count(),
   get: (id: number) => tobaccoUseRepository.findOne(id),
   getByRespondent: (respondentId: number) => tobaccoUseRepository.findByRespondent(respondentId),
   update: (id: number, data: Parameters<typeof tobaccoUseRepository.update>[1]) =>

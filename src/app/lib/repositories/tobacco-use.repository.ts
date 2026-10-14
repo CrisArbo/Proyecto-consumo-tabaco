@@ -14,6 +14,11 @@ export const tobaccoUseRepository = {
       .all();
   },
 
+  async count(): Promise<number> {
+    const { count } = await db.orm.public.TobaccoUse.aggregate((a) => ({ count: a.count() }));
+    return count;
+  },
+
   async findOne(id: number): Promise<TobaccoUse | null> {
     return db.orm.public.TobaccoUse.first({ id });
   },

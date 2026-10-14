@@ -14,6 +14,11 @@ export const respondentRepository = {
       .all();
   },
 
+  async count(): Promise<number> {
+    const { count } = await db.orm.public.Respondent.aggregate((a) => ({ count: a.count() }));
+    return count;
+  },
+
   findOne(id: number) {
     return db.orm.public.Respondent.where({ id })
       .include("person")

@@ -14,6 +14,11 @@ export const personRepository = {
       .all();
   },
 
+  async count(): Promise<number> {
+    const { count } = await db.orm.public.Person.aggregate((a) => ({ count: a.count() }));
+    return count;
+  },
+
   async findOne(id: number): Promise<Person | null> {
     return db.orm.public.Person.first({ id });
   },
