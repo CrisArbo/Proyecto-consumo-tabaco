@@ -115,10 +115,4 @@ erDiagram
 
 ---
 
-## License
 
-This project is licensed under the [MIT License](./LICENSE).
-
-## Author
-
-- [IsaCode4](https://github.com/IsaCode4)
